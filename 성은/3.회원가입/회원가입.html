@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/3.회원가입/css/회원가입.css">
+</head>
+<body>
+  <form method="post" action="">
+  <div class="container">
+  <div class="insert">
+  <table>
+  <caption><h2>회원가입 양식</h2></caption>
+  <tr>
+      <td class="col1">이름</td>
+      <td class="col2"><input type="text" name="name" maxlength="5"></td>
+  </tr>
+  <tr>
+      <td class="col1">아이디</td>
+      <td class="col2">
+          <input type="text" name="id" maxlength="10">
+          <input class='but1' type="button" value="중복확인" onclick="">
+      </td>
+  </tr>
+  <tr>
+      <td class="col1">비밀번호</td>
+      <td class="col2">
+          <input type="password" name="pwd" maxlength="16">
+          <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+          10 ~ 16자리</span>로 입력이 가능합니다.</p>
+      </td>
+  </tr>
+  <tr>
+      <td class="col1">비밀번호 확인</td>
+      <td class="col2"><input type="password" name="pwdCheck" maxlength="16"></td>
+  </tr>
+  <tr>
+      <td class="col1">휴대폰 번호</td>
+      <td class="col2">
+        <select name="mailslc">
+            <option value="number" selected>직접입력</option>
+            <option value="n">010</option>
+            <option value="u">011</option>
+            <option value="m">110</option>
+        <select name="mailslc"></select>
+            <span class="a">-</span>
+            <input class="text" name="number">
+            <span class="a">-</span>
+            <input class="text" name="number">
+      </td>
+  </tr>
+  <tr>
+      <td class="col1">이메일</td>
+      <td class="col2">
+          <input type="text" name="mailid">
+          <span class="a">@</span>
+          <input type="text" name="email">
+          <select name="mailslc">
+              <option value="self" selected>직접입력</option>
+              <option value="naver">naver.com</option>
+              <option value="gm">gmail.com</option>
+              <option value="da">daum.com</option>
+              <option value="yah">yahoo.com</option>
+          </select>
+          <input class='but2' type="button" value="이메일 중복확인" onclick="">
+      </td>
+  </tr>
+  <tr>
+    <td>
+        <button id="btn3" type="button" onClick="location.href='/1.메인사이트/main.html'">회원가입</button>
+    </td>
+  </tr>
+</form>
+</body>
+</html>
