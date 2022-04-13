@@ -6,8 +6,8 @@
 .container {
   width: 100%;
   display: flex;
-  padding: 0 20px;
-  background-color:  rgb(243, 243, 243);
+  /* padding: 0 20px; */
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,211,233,1) 100%);
 }
 
 .img{
@@ -23,6 +23,7 @@
   filter: blur(1px);
   transition: all 0.2s linear;
 }
+
 
 .img:hover{
     transform: scale(1.1);
