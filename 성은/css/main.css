@@ -11,10 +11,10 @@
     background: rgb(147, 198, 245);
 } */
 
-a{
+/* a{
     text-decoration: none;
     color: aliceblue;
-}
+} */
 li > a,
 .navbar_logo > a{
     text-decoration: none;
