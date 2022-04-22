@@ -1,0 +1,47 @@
+CREATE TABLE S_RESIST(
+    S_STUDYCODE number(10) primary key not null,
+    M_MEMCODE VARCHAR2(10) not null,
+    M_NAME VARCHAR2 (50) not null,
+    S_TITLE VARCHAR2 (100) not null,
+    S_CONTENT VARCHAR2 (1000) not null,
+    S_COUNT NUMBER DEFAULT 0 not null,
+    S_AREA VARCHAR2 (20) not null,
+    S_LANNAME VARCHAR2 (50) not null,
+    S_PARTTIME VARCHAR2 (50) not null,
+    S_WEEK  VARCHAR2 (20) not null,
+    S_CHATLINK VARCHAR2 (100) not null,
+    S_DELETEYN VARCHAR2 (1) default 'N' not null,
+    S_WRITEDAY DATE DEFAULT SYSDATE not null,
+    S_STARTDAY VARCHAR2 (20),
+    S_ENDDAY VARCHAR2 (20)
+);
+
+insert into S_RESIST( S_STUDYCODE, M_MEMCODE, M_NAME, S_TITLE, S_CONTENT, S_COUNT, S_AREA, S_LANNAME, S_PARTTIME, S_WEEK,  S_CHATLINK,  S_DELETEYN, S_WRITEDAY, S_STARTDAY, S_ENDDAY)
+    VALUES(1, 1, 'yu', 'it is test.', 'ddd', 0, 'paju', 'eng', 'f', 'w', 'e', 'N', sysdate, null, null);
+
+CREATE TABLE S_JOIN(
+    S_JOINCODE number(10) primary key not null,
+    S_STUDYCODE VARCHAR2(10)not null,
+    M_MEMCODE VARCHAR2(10) not null,
+    SJ_NAME VARCHAR2 (50),
+    SJ_DATE DATE DEFAULT SYSDATE ,
+    SJ_TITLE VARCHAR2 (100),
+    SJ_CONTENT VARCHAR2 (1000),
+    SJ_SUBMITYN VARCHAR2 (1) default 'N' not null
+);
+
+
+insert into S_JOIN( S_JOINCODE, S_STUDYCODE,  M_MEMCODE, SJ_NAME, SJ_DATE, SJ_TITLE, SJ_CONTENT, SJ_SUBMITYN)
+    VALUES(S_JOIN_seq.NEXTVAL, 1, 4, 'yujuhun' ,  sysdate, 'it is test.', 'ddd', 'Y');
+
+create SEQUENCE S_JOIN_seq
+
+start with 1
+
+increment by 1
+
+nomaxvalue
+
+nocache
+
+nocycle;
