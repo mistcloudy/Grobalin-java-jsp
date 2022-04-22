@@ -1,13 +1,11 @@
 * {margin: 0; padding: 0;}  
 body {
-    /* float: left;  */
     width: 100%; 
     height: 100vh; 
     background: linear-gradient(134deg, #71b7e6, #9b59b6);
 }
 
-/* 화면 너비 0 ~ 1200px */
-/* 서브느낌 */
+
 
 
 form{
@@ -19,7 +17,6 @@ form{
     left: 25%;
     top: 10%;
     background-color: #f8f8f8;
-    /* background: url(/프로젝트2/img/책상.png); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,14 +27,11 @@ form{
 caption{
     padding: 10px;
     color: #000000;
-    /* background-color: rgb(255, 255, 255); */
-    /* border: 2px solid rgb(252, 251, 251); */
     position: absolute;
     top: 5%;
     left: 38%;
     font-size: 20px;
     font-weight: bold;
-    /* border: 2px solid black; */
     border-radius: 10px;
 }
 
@@ -73,13 +67,11 @@ p{
     
 #btn3{
     width: 50%;
-    /* display: flex; */
     position: absolute;
     top: 85%;
     left: 25%;
     color: #e8e8e8;
     background-color: rgb(156, 17, 236);
-    /* border: 3px solid black; */
     padding: 30px;
     border-radius: 10px;
     font-weight: bold;
