@@ -10,7 +10,7 @@ public class ConnUtil {
 		
 		try {
 			InitialContext ctx= new InitialContext();
-			ds= (DataSource)ctx.lookup("java:comp/env/jdbc/TestProject");
+			ds= (DataSource)ctx.lookup("java:comp/env/jdbc/globalin_project");
 			
 		}catch(NamingException ne) {
 			ne.printStackTrace();
