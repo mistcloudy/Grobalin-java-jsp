@@ -176,11 +176,12 @@ public class LoginDAO {
 		}
 		//회원탈퇴 버튼을 클릭하면 회원의 비밀번호를 입력받앗어 데이터베이스의 비밀번화와 일치하는지를 비교
 		//일치한다면 회원 탈퇴 처리가 완료, 그렇지 않으면 비밀번호가 틀렸다고 알려줌;
-		public int deleteMember(String id, String pass) {
+		public int deleteMember(String id, String pw) {
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			String dbPass="";
+			String memcode;
 			int result = -1;
 			try {
 				con = getConnection();
@@ -190,10 +191,22 @@ public class LoginDAO {
 				rs = pstmt.executeQuery();
 				if (rs.next()) {
 					dbPass = rs.getString("M_PW"); // 데이터베이스에서 가져온 비밀번호
-					if (dbPass.equals(pass)) {
+					if (dbPass.equals(pw)) {
+						pstmt=con.prepareStatement("select m_memcode from s_member where m_id=?");
+						pstmt.setString(1, id);
+						rs=pstmt.executeQuery();
+						if(rs.next()) {
+						memcode=rs.getString("m_memcode");
+						pstmt=con.prepareStatement("delete from s_resist where m_memcode=?");
+						pstmt.setString(1, memcode);
+						pstmt.executeUpdate();
+						pstmt=con.prepareStatement("delete from s_join where m_memcode=?");
+						pstmt.setString(1, memcode);
+						pstmt.executeUpdate();
 						pstmt=con.prepareStatement("delete from s_member where M_id=?");
 						pstmt.setString(1, id);
 						pstmt.executeUpdate();
+						}
 						result=1;//회원 탈퇴성공
 					}else //본인 확인 실패-비밀번호 오류
 						result = 0;

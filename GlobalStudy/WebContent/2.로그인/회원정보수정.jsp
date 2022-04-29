@@ -21,7 +21,7 @@
   <div class="container">
   <div class="insert">
   <table>
-  <caption><h2>회원가입 양식</h2></caption>
+  <caption><h2>회원정보 수정 양식</h2></caption>
   <tr>
       <td class="col1">이름</td>
       <td class="col2"><input type="text" name="name" maxlength="5" value="<%=vo.getName()%>"readonly ></td>

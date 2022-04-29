@@ -6,7 +6,7 @@
     
     <%
     
-    int StudyCode = Integer.parseInt(request.getParameter("s_STUDYCODE"));
+    int StudyCode = Integer.parseInt(request.getParameter("StudyCode"));
     StudyRoomDAO Stdao = StudyRoomDAO.getInstance();
     StudyRoomVO Stvo = Stdao.getContent(StudyCode);
 
@@ -38,8 +38,7 @@
                 <li><a href="#">후기작성</a></li>
             </ul>
             <ul class="navbar_icons">
-                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
-                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
             </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
@@ -48,7 +47,7 @@
         </nav>
 <div class="soun">
     <div class="container">
-<form action="../스터디수정/스터디수정.jsp" method="get">
+<form action="../스터디정보/스터디수정Proc.jsp" method="get">
 
         <div class="title">스터디 상세내용</div>
             <div class="user-details">
