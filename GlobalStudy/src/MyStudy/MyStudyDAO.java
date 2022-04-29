@@ -147,7 +147,7 @@ public class MyStudyDAO {
 		
 		try {
 			con = ConnUtil.getConnection();
-			pstmt = con.prepareStatement(" select count(S_JOIN.M_MEMCODE) from  S_RESIST inner join S_JOIN on S_RESIST.S_STUDYCODE =S_JOIN.S_STUDYCODE and S_JOIN.SJ_SUBMITYN='Y' and S_RESIST.S_STUDYCODE=?"); //  신청번호에서 수락여부 0 인 스터디 번호의 카운트
+			pstmt = con.prepareStatement(" select count(S_JOIN.S_JOINCODE) from  S_RESIST inner join S_JOIN on S_RESIST.S_STUDYCODE =S_JOIN.S_STUDYCODE and S_JOIN.SJ_SUBMITYN='Y' and S_RESIST.S_STUDYCODE=?"); //  신청번호에서 수락여부 0 인 스터디 번호의 카운트
 			pstmt.setString(1, code); 
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
@@ -418,7 +418,7 @@ public List<MyStudyVO> getArticles5(int start, int end, String code){
 			con = ConnUtil.getConnection();
 			//가장 최근에 입력한 글이 가장 처음으로 오게 내림차순 정렬하는 구문
 //			pstmt = con.prepareStatement("select * from board order by num desc");
-			pstmt = con.prepareStatement("select * from (select rownum rnum, r.S_STUDYCODE, j.SJ_NAME, r.S_AREA, r.S_LANNAME, j.SJ_JOINDAY, j.S_JOINCODE from S_RESIST r  inner join S_JOIN j on r.S_STUDYCODE =j.S_STUDYCODE and r.S_STUDYCODE=? and j.SJ_SUBMITYN='Y') where rnum >=? and rnum <=?");
+			pstmt = con.prepareStatement("select * from (select rownum rnum, r.S_STUDYCODE, j.SJ_NAME, r.S_AREA, r.S_LANNAME, j.SJ_JOINDAY, j.S_JOINCODE from S_RESIST r  inner join S_JOIN j on r.S_STUDYCODE =j.S_STUDYCODE and j.S_STUDYCODE=?  and j.SJ_SUBMITYN='Y') where rnum >=? and rnum <=?");
 			pstmt.setString(1, code);
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, end);
@@ -608,39 +608,23 @@ public List<MyStudyVO> getArticles5(int start, int end, String code){
 	}
 	// 스터디 정보 수정하기 
 	
-	public int deleteArticle(String code, String pass) {
+	public void deleteArticle(int code) {
 		Connection con = null;
 		PreparedStatement pstmt =null;
-		ResultSet rs=null;
-		String dbpasswd ="";
-		int result = -1;
+	
 		try {
 			con=ConnUtil.getConnection();
-			pstmt=con.prepareStatement("select pass from S_RESIST where S_STUDYCODE=?");
-			pstmt.setString(1, code);
-			rs=pstmt.executeQuery();
-			//pstmt.close();
-			
-			if(rs.next()) {
-				dbpasswd=rs.getString("pass");
-				if(dbpasswd.equals(pass)) {
-					pstmt= con.prepareStatement("delete from S_RESIST where S_STUDYCODE=?");
-					pstmt.setString(1, code);
-					pstmt.executeUpdate();
-					result=1;
-				}else {
-					result=0;
-				}
-			}
+			pstmt= con.prepareStatement("delete from R_RESIST where S_STUDYCODE=?");
+			pstmt.setInt(1, code);
+			pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			if(rs != null)try {rs.close();}catch(SQLException ss) {}
 			if(pstmt != null)try {pstmt.close();}catch(SQLException ss) {}
 			if(con != null)try {con.close();}catch(SQLException ss) {}
 		}
-		return result;
 	}
+	// 스터디
 	// 스터디 정보 삭제하기 
 	
 	public void deleteArticle2(int code) {
@@ -687,7 +671,7 @@ public List<MyStudyVO> getArticles5(int start, int end, String code){
 		try {
 			article = new MyStudyVO();
 			con = ConnUtil.getConnection();
-			pstmt=con.prepareStatement("update S_JOIN set Sj_SUBMITYN=? where S_JOINCODE=?");
+			pstmt=con.prepareStatement("update S_JOIN set Sj_SUBMITYN=?, SJ_JOINDAY=sysdate where S_JOINCODE=?");
 			pstmt.setString(1, "Y");
 			pstmt.setInt(2, code);
 			pstmt.executeUpdate();

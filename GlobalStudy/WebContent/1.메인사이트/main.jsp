@@ -16,10 +16,10 @@
 <script src="https://kit.fontawesome.com/ea243819fd.js"
 	crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="css/slide.css">
-<link rel="stylesheet" href="css/container.css">
-<link rel="stylesheet" href="css/container1.css">
-<link rel="stylesheet" href="css/footer.css">
+ <link rel="stylesheet" href="../css/slide.css">
+    <link rel="stylesheet" href="../css/메인사이트1.css">
+    <link rel="stylesheet" href="../css/메인사이트2.css">
+    <link rel="stylesheet" href="../css/footer.css">
 <%
 request.setCharacterEncoding("utf-8");
 String LanName = request.getParameter("LanName");
@@ -36,13 +36,6 @@ if (count == 0) {
 	
 	
 } else {
-	
-	
-	
-	
-	
-	
-	
 	if (LanName == null && Area == null && Level == null && Week == null) {
 		StudyList = stDao.getList();
 	} else {
@@ -57,7 +50,7 @@ if (count == 0) {
 	 <nav class="navbar">
             <div class="navbar_logo">
                 <i class="fa-solid fa-award"></i>   
-                <a href="../1.메인사이트/main.jsp">LOGO</a>
+                <a href="../1.메인사이트/main.jsp">Global Study</a>
             </div>
             <ul class="navbar_menu">
                 <li><a href="../4.스터디찾기/스터디목록.jsp">스터디찾기</a></li>
@@ -66,10 +59,9 @@ if (count == 0) {
                 <li><a href="../7.내스터디/개인정보.jsp">내스터디</a></li>
                 <li><a href="#">후기작성</a></li>
             </ul>
-            <ul class="navbar_icons">
-                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
-                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
+                 <ul class="navbar_icons">
+            <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
                 <i class="fa-solid fa-bars"></i>
@@ -83,10 +75,10 @@ if (count == 0) {
 			name="pos" id="pos3"> <input type="radio" name="pos"
 			id="pos4">
 		<ul>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+		    <li><img src="../img/슬라이드.png"></li>
+      <li><img src="../img/슬라이드2.png"></li>
+      <li><img src="../img/슬라이드3.png"></li>
+      <li><img src="../img/슬라이드4.png"></li>
 		</ul>
 		<p class="pos">
 			<label for="pos1"></label> <label for="pos2"></label> <label
@@ -100,15 +92,15 @@ if (count == 0) {
 		<%
 		if (count == 0) {
 		%>
-		<div class="img" style="background-image: url('/연습용/img/공명1.png');">
+		<div class="img" style="background-image: url('/1.메인사이트/img/공명1.png');">
 			현재 게시판이 비어있습니다.</div>
-		<div class="img" style="background-image: url('/연습용/img/공명2.png');">
+		<div class="img" style="background-image: url('/1.메인사이트/img/공명1.png');">
 			현재 게시판이 비어있습니다.</div>
-		<div class="img" style="background-image: url('/연습용/img/공명3.png');">
+		<div class="img" style="background-image: url('/1.메인사이트/img/공명1.png');">
 			현재 게시판이 비어있습니다.</div>
-		<div class="img" style="background-image: url('/연습용/img/공명4.png');">
+		<div class="img" style="background-image: url('/1.메인사이트/img/공명1.png');">
 			현재 게시판이 비어있습니다.</div>
-		<div class="img" style="background-image: url('/연습용/img/공명5.png');">
+		<div class="img" style="background-image: url('/1.메인사이트/img/공명1.png');">
 			현재 게시판이 비어있습니다.</div>
 		<%
 		} else {
@@ -118,9 +110,8 @@ if (count == 0) {
 				
 		%>
 	
-		<div class="img" style="background-image: url('img/다운로드.png');" onclick="location.href='../4.스터디찾기/스터디내용.jsp?studyCode=<%=Article.getStudyCode()%>';">
-		<span><%=Article.getTitle()%>
-				</span>
+		<div class="img" text="<%=Article.getTitle()%>" style="background-image: url('../img/명언4.png');" onclick="location.href='../4.스터디찾기/스터디내용.jsp?studyCode=<%=Article.getStudyCode()%>';">
+		<span><%=Article.getTitle()%></span>
 				
 		</div>
 	
@@ -146,115 +137,116 @@ if (count == 0) {
 
 
 		<!-- 명언 -->
-
-		<div class="body2">
-			<div class="container1">
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/공부명언1.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/공부명언1.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-				<div class="box">
-					<div class="imgBox">
-						<img src="img/소크라테스.png">
-					</div>
-					<div class="details">
-						<div class="content">
-							<h2>What is Lorem Ipsum?</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting indusrty Lorem Ipsum has been the industry's
-								standard dummt text ever since the 1500s</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="body2">
+   <div class="container1">
+       <div class="box">
+           <div class="imgBox">
+               <img src="../img/명언1.png">
+           </div>
+           <div class="details">
+               <div class="content">
+               <h2>캐럴 버넷</h2>
+               <p>나만이 내 인생을 바꿀 수 있다
+                   아무도 날 대신해 해줄 수 없다
+               </p>
+            </div>
+           </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언2.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>애비게일 애덤스</h2>
+            <p>배움은 우연히 얻어지는 것이 아니라
+                열성을 다해 갈구하고 부지런히 집중해야 
+                얻을 수 있는 것이다
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언3.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>빌 게이츠</h2>
+            <p>텔레비전은 현실이 아니다
+                현실에서는 커피를 마셨으면
+                일을 시작해야한다
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언4.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>헤리크</h2>
+            <p>노력이 적으면 얻는 것도 적다
+                인간의 재산은 그의 노고에 달렸다
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언5.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>오노레드 발자크</h2>
+            <p>아무것도 변하지 않을지라도 내가 변하면 
+                모든 것이 변한다
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언6.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>찰스 다윈</h2>
+            <p>꺼리김없이 한 시간을 낭비하는 사람은
+                아직 삶의 가치를 발견하지 못한 사람이다
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언7.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>바뤼희 스피노자</h2>
+            <p>현재가 과거와 다르길 바란다면
+                과거를 공부하라
+            </p>
+         </div>
+        </div>
+       </div>
+       <div class="box">
+        <div class="imgBox">
+            <img src="../img/명언8.png">
+        </div>
+        <div class="details">
+            <div class="content">
+            <h2>공자</h2>
+            <p>남이 나를 알아 주지 않는다고 불평하지말아라
+                내가 남을 알지 못함을 걱정하라
+            </p>
+         </div>
+        </div>
+    </div>
+   </div>
+</div>
 		<!-- footter바 -->
 		<div class="body3">
 			<footer>
@@ -270,7 +262,6 @@ if (count == 0) {
 					<li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
 					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
 				</ul>
-				<a href="../boardone/list.jsp">자유게시판</a>
 				<ul class="menu">
 					<li><a href="#">유주훈</a></li>
 					<li><a href="#">이준호</a></li>

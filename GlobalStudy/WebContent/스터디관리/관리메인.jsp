@@ -18,7 +18,7 @@
     	pageNum="1";
     }
     if(code==null){
-    	code="1";
+    	code="2";
     }
     
     int currentPage = Integer.parseInt(pageNum);

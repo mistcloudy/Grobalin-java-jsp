@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신청양식</title>
-    <link rel="stylesheet" href="/css/신청서.css">
+    <link rel="stylesheet" href="../css/신청서.css">
 </head>
 <%
  int joincode = Integer.parseInt(request.getParameter("s_JOINCODE"));
@@ -46,8 +46,10 @@
                 </div>
             </div>
             <div class="button">
-                <input type="button" value="수락" onclick="this.form.action='../스터디신청/신청수락.jsp'">
-                <input type="submit"value="거절"  style="float: right;" onclick="this.form.action='../스터디신청/신청거절.jsp'">
+              <input type="submit" value="수락" onclick="this.form.action='../스터디신청/신청수락.jsp'" >                                 
+                                    <input type="submit" value="거절" onclick="this.form.action='../스터디신청/신청거절.jsp'" >
+                                     <input type="hidden" name="s_JOINCODE" value="<%=article.getS_JOINCODE()%>">   
+                                        
             </div>
            
         </form>

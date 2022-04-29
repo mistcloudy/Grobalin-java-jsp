@@ -2,18 +2,62 @@ package Login;
 
 public class LoginVO {
 	//객체값을 저장, Value object
-	String M_MemCode; //회원코드
-	String M_Name; // 회원 이름
-	public String getM_MemCode() {
-		return M_MemCode;
+	String memCode; //회원코드
+	String id;
+	String pw;
+	String name;
+	String lanName;
+	String level;
+	String email;
+	String phone;
+	public String getMemCode() {
+		return memCode;
 	}
-	public void setM_MemCode(String m_MemCode) {
-		M_MemCode = m_MemCode;
+	public void setMemCode(String memCode) {
+		this.memCode = memCode;
 	}
-	public String getM_Name() {
-		return M_Name;
+	public String getId() {
+		return id;
 	}
-	public void setM_Name(String m_Name) {
-		M_Name = m_Name;
+	public void setId(String id) {
+		this.id = id;
 	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLanName() {
+		return lanName;
+	}
+	public void setLanName(String lanName) {
+		this.lanName = lanName;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+
 }

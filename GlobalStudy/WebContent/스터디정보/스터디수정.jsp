@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="MyStudy.*" %>
     <%@ page import="StudyRoom.*" %>
     <%@ page import="java.util.*" %>
     
     <%
-    int StudyCode = Integer.parseInt(request.getParameter("StudyCode"));   
+    
+    int StudyCode = Integer.parseInt(request.getParameter("s_STUDYCODE"));
     StudyRoomDAO Stdao = StudyRoomDAO.getInstance();
     StudyRoomVO Stvo = Stdao.getContent(StudyCode);
 
     %>
     <script src="https://kit.fontawesome.com/ea243819fd.js" crossorigin="anonymous"></script>
-    <link type="text/css" rel="stylesheet" href="/css/main.css">
-    <link type="text/css" rel="stylesheet" href="/css/검색등록.css">
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/검색등록.css">
     
     
 <!DOCTYPE html>
@@ -20,13 +22,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스터디 등록</title>
+    <title>스터디 수정</title>
 </head>
 <body>
     <nav class="navbar">
             <div class="navbar_logo">
                 <i class="fa-solid fa-award"></i>   
-                <a href="../1.메인사이트/main.jsp">LOGO</a>
+                <a href="../1.메인사이트/main.jsp">Global Study</a>
             </div>
             <ul class="navbar_menu">
                 <li><a href="../4.스터디찾기/스터디목록.jsp">스터디찾기</a></li>
@@ -115,9 +117,9 @@
                 <textarea name="content"><%=Stvo.getContent() %></textarea>
             </div>
             <div class="button">
-                <input type="submit" value="수정">
+                <input type="submit" value="수정완료">
                 <input type="reset" value="취소">
-                <input type="submit" value="목록보기" onclick="document.location.href='../4.스터디찾기/스터디목록.jsp'">
+                <input type="submit" value="목록보기" onclick="document.location.href='../스터디정보/정보메인.jsp'">
                <%--  <input type="hidden" name="writeDay" value="<%=Stvo.getWriteDay() %>">  --%> 
                 <input type="hidden" name="studyCode" value="<%= StudyCode%>">  
             </div>

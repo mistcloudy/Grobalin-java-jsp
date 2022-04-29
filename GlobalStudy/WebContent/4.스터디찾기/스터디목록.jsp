@@ -10,26 +10,45 @@
     <link type="text/css" rel="stylesheet" href="../css/목록.css">
     <%
     request.setCharacterEncoding("utf-8");
+    int pageSize = 5;
     
+    String pageNum = request.getParameter("pageNum");
     String LanName = request.getParameter("LanName");
     String Area = request.getParameter("Area");
     String Level = request.getParameter("Level");
     String Week = request.getParameter("Week");
     ArrayList<StudyRoomVO> StudyList = null;
     StudyRoomDAO stDao = StudyRoomDAO.getInstance();
-    int count = 0;
-    count = stDao.getCount();
-    if(count==0){	 
-    }else{
-     if(LanName==null&&Area==null&&Level==null&&Week==null){
-    	StudyList = stDao.getList();
-    } 
-   else{
-    	StudyList = stDao.getList(LanName, Area, Level, Week);
-    	String Lan = LanName;
-    	}
+    
+    if(pageNum==null){
+    	pageNum="1";
     }
+    
+    int currentPage = Integer.parseInt(pageNum);
+    int start=(currentPage-1)*pageSize+1;
+    int end=currentPage*pageSize;
+    
+    int number = 0;
+    int count = 0;
+    if(LanName==null&&Area==null&&Level==null&&Week==null){
+    	count=stDao.getCount();//전체 글수
+    
+    //count>0 == 글이 1개이상 존재한다.
+    if(count>0){
+    	//글을 가져와서 articleList에 저장
+    	StudyList = stDao.getList(start,end);
+    }
+}else{
+  count = stDao.getCount(LanName, Area, Level, Week);
+  
+  if(count>0){
+  	//글을 가져와서 articleList에 저장
+  	StudyList = stDao.getList(LanName, Area, Level, Week, start, end);
+  }
+    }
+    number = count-(currentPage-1)*pageSize;
     %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,12 +180,45 @@
 				}%>
 				</table>
 				<div class="paging">
-            <a href="#" class="bt">이전 페이지</a>
-            <a href="#" class="num">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="num">4</a>
-            <a href="#" class="bt">다음 페이지</a>
+           <%
+if(count>0){
+	 
+	int pageBlock=5;
+	int imsi = count%pageSize==0?0:1;
+	int pageCount = count/pageSize + imsi;
+	int startPage = (int)((currentPage-1)/pageBlock)*pageBlock+1;
+	int endPage = startPage+pageBlock -1;
+	if(endPage>pageCount) endPage=pageCount;
+	
+	//이전 블럭, 다음블럭
+	if(startPage>pageBlock){
+		//검색일 경우와 아닐경우 페이지 처리
+		if(LanName==null&&Area==null&&Level==null&&Week==null){
+		%>
+		<a href="스터디목록.jsp?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+		<%}else{%>
+		<a href="스터디목록.jsp?pageNum=<%=startPage-pageBlock%>&LanName=<%=LanName%>&Area=<%=Area%>&Level=<%=Level%>&Week=<%=Week%>">[이전]</a>
+	<%}
+		}
+	 
+	for(int i = startPage;i<=endPage;i++){
+		if(LanName==null&&Area==null&&Level==null&&Week==null){
+	%>
+	<a href="스터디목록.jsp?pageNum=<%=i%>">[<%=i%>]</a>
+	<%}else{ %>
+	<a href="스터디목록.jsp?pageNum=<%=i%>&LanName=<%=LanName%>&Area=<%=Area%>&Level=<%=Level%>&Week=<%=Week%>">[<%=i%>]</a>
+<% }
+}
+	if(endPage<pageCount){
+		if(LanName==null&&Area==null&&Level==null&&Week==null){
+	 %>
+		<a href="스터디목록.jsp?pageNum=<%=startPage+pageBlock%>">[다음]</a>	
+	<%}else{%>
+	<a href="스터디목록.jsp?pageNum=<%=startPage+pageBlock%>&LanName=<%=LanName%>&Area=<%=Area%>&Level=<%=Level%>&Week=<%=Week%>">[다음]</a>
+	<% }
+	 }
+}
+%>
       		  </div>
       		  </div>                        
       		  </div>            
