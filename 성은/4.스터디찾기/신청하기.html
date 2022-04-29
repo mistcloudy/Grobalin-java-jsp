@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스터디 신청받기</title>
+    <script src="https://kit.fontawesome.com/ea243819fd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/검색등록.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <i class="fa-solid fa-award"></i>   
+            <a href="/1.메인사이트/main.html">LOGO</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="/4.스터디찾기/index.html">스터디찾기</a></li>
+            <li><a href="/5.스터디등록/idex.html">스터디등록</a></li>
+            <li><a href="#">레벨테스트</a></li>
+            <li><a href="/7.내스터디/개인정보.html">내스터디</a></li>
+            <li><a href="#">후기작성</a></li>
+        </ul>
+        <ul class="navbar_icons">
+            <li><a href="/2.로그인/Login.html"><ion-icon name="log-in-outline"></ion-icon></a></li>
+            <li><a href="/3.회원가입/회원가입.html"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+
+        <a href="#" class="navbar_toogleBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+<div class="soun">
+    <div class="container">
+        <div class="title">원하는 스터디면 신청해주세요!</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">작성자 이름</span>
+                    <input type="text" name="name" readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">스터디 제목</span>
+                    <input type="text" name="title" readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">지역</span>
+                    <select id="row1" name="area" class="form-control" readonly>
+                        <option value="">선택하세요.</option>
+                        <option value="1">강남</option>
+                        <option value="2">영등포</option>
+                        <option value="3">서초구</option>
+                        <option value="4">부평</option>
+                        <option value="5">송도</option>
+                        <option value="6">무인도</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <span class="details">언어명</span>
+                    <select id="row1" name="lanname" class="form-control" readonly>
+                        <option value="">선택하세요.</option>
+                        <option value="1">일본어</option>
+                        <option value="2">중국어</option>
+                        <option value="3">스페인어</option>
+                        <option value="4">아랍어</option>
+                        <option value="5">프랑스어</option>
+                        <option value="6">영어</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <span class="details">모임날짜</span>
+                    <input type="date" name="parttime" >
+                </div>
+                <div class="input-box">
+                    <span class="details">모임시간</span>
+                    <input type="time" name="parttime" >
+                </div>
+                <div class="input-box">
+                    <span class="details">모집 시간</span>
+                    <input type="time" name="startday" >
+                    <spna></spna>
+                    <input type="time" name="endday" >
+                </div>
+                <div class="input-box">
+                    <span class="details">최대 인원</span>
+                    <select id="row1" name="Personnel" class="form-control" >
+                        <option value="">선택하세요.</option>
+                        <option value="1">1명</option>
+                        <option value="2">2명</option>
+                        <option value="3">3명</option>
+                        <option value="4">4명</option>
+                        <option value="5">5명</option>
+                        <option value="6">6명</option>
+                    </select>
+                </div>
+                <span class="details">스터디 내용</span>
+            </div>
+            <div class="gender-details">
+                <textarea placeholder="내용 입력" name="content" readonly></textarea>
+            </div>
+            <div class="button">
+                <input type="submit" value="신청" onClick="location.href='/4.스터디찾기/index.html'">
+                <input type="submit" value="뒤로" onClick="location.href='/4.스터디찾기/index.html'">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- footter바 -->
+    <div class="body3">
+         <footer>
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+                </div>
+                    <ul class="social_icon">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                        <ul class="menu">
+                            <li><a href="#">유주훈</a></li>
+                            <li><a href="#">이준호</a></li>
+                            <li><a href="#">위성은</a></li>
+                            <li><a href="#">지윤근</a></li>
+                            <li><a href="#">안성기</a></li>
+                        </ul>
+                            <p>ⓒ2022 일본4기IT연수 글로벌인 2021년10월~2022년05월</p>
+                            </footer>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>             
+</body>
+</html>
