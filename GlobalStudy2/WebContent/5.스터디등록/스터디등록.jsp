@@ -5,8 +5,26 @@
        <script src="https://kit.fontawesome.com/ea243819fd.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/검색등록.css">
-    
-    <%
+      <%
+	if(session.getAttribute("loginID")==null)
+	{
+		 %>
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<meta charset="UTF-8" http-equiv="Refresh" content="1; url=../1.메인사이트/main.jsp">
+		<title>Insert title here</title>
+		</head>
+		<body>
+		<div align="center">
+		<b>로그인을 하셔야합니다</b>
+		</div>
+		</body>
+		</html>
+		<%
+		} else {
+   
+    String loginID=(String)session.getAttribute("loginID");
     String M_MemCode=(String)session.getAttribute("M_MemCode");
     String M_Name=(String)session.getAttribute("M_Name"); 
 
@@ -33,7 +51,8 @@
                 <li><a href="#">후기작성</a></li>
             </ul>
             <ul class="navbar_icons">
-            <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
+                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
             </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
@@ -42,7 +61,7 @@
         </nav>
     <div class="soun">
     <div class="container">
-    <form action="스터디등록Proc.jsp" method="get">
+    <form action="../5.스터디등록/스터디등록Proc.jsp" method="get">
         <div class="title">스터디 등록</div>
         
         
@@ -119,4 +138,7 @@
     </div>
 </div>      
 </body>
+<%
+}
+    %>
 </html>

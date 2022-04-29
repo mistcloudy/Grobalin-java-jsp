@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ page import="StudyRoom.*" %>
     <%@ page import="MyStudy.MyStudyDAO" %>
     <%@ page import="MyStudy.MyStudyVO" %>
     <%@ page import="java.util.List" %>
@@ -14,29 +15,33 @@
     <link rel="stylesheet" href="../css/신청서.css">
 </head>
 <%
+	int StudyCode = Integer.parseInt(request.getParameter("StudyCode"));
+String loginID=(String)session.getAttribute("loginID");
+String code=(String)session.getAttribute("M_MemCode");
+String M_Name=(String)session.getAttribute("M_Name"); 	
+
 
  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH :mm");
  
  try{
-	 MyStudyDAO dbPro = MyStudyDAO.getInstance();
+	 
  %>
 <body>
+<div class="soun">
     <div class="container">
         <div class="title">스터디 신청</div>
-        <form action="신청작성Proc.jsp" method="get">
+        <form action="../스터디신청/신청작성Proc.jsp" method="get">
+        <input type="hidden" name="StudyCode" value="<%=StudyCode %>">
+          <input type="hidden" name="memCode" value="<%=code%>">
             <div class="user-details">
+              <div class="input-box">
+                    <span class="details">신청자</span>
+                    <input type="text" name="name" value="<%=M_Name %>">
+                </div>
             <div class="input-box">
                 <span class="details">신청 제목</span>
                 <input type="text" name="title" >
             </div>
-                <div class="input-box">
-                    <span class="details">신청자</span>
-                    <input type="text" name="name" value="<%=article.getM_NAME() %>">
-                </div>
-                <div class="input-box">
-                    <span class="details">신청날짜</span>
-                    <input type="text" name="date"  >
-                </div>
                 <span>신청내용</span>
                 <div class="gender-details">
                     <textarea placeholder="내용 입력" name="content"  ></textarea>
@@ -44,7 +49,8 @@
             </div>
             <div class="button">
                 <input type="submit" value="보내기" >
-                <input type="button" name="turn" value="뒤로"  style="float: right;" onClick="location.href=''">
+                <input type="button" name="turn" value="목록으로"  style="float: right;" onClick="location.href='../4.스터디찾기/스터디목록.jsp'">
+                                 
             </div>
            
         </form>

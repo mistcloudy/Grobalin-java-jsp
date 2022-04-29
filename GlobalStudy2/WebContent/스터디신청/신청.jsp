@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/신청서.css">
 </head>
 <%
+
  int joincode = Integer.parseInt(request.getParameter("s_JOINCODE"));
  String pageNum = request.getParameter("pageNum");
  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH :mm");

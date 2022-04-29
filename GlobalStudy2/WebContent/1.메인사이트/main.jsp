@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>연습용메인</title>
+<title>글로벌 스터디</title>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://kit.fontawesome.com/ea243819fd.js"
 	crossorigin="anonymous"></script>
@@ -26,6 +26,7 @@ String LanName = request.getParameter("LanName");
 String Area = request.getParameter("Area");
 String Level = request.getParameter("Level");
 String Week = request.getParameter("Week");
+String loginID=(String)session.getAttribute("loginID");
 ArrayList<StudyRoomVO> StudyList = null;
 StudyRoomDAO stDao = StudyRoomDAO.getInstance();
 ArrayList<StudyRoomVO> ArticleList = stDao.getArticles();
@@ -44,6 +45,18 @@ if (count == 0) {
 	}
 }
 %>
+
+<script >
+function loginCk() {
+	String loginID=(String)session.getAttribute("loginID");
+	if (loginID == null) {
+		alert("로그인을 해야합니다.");
+		window.history.back();
+	} else {
+		location.href="../7.내스터디/개인정보.jsp"
+	}
+}
+</script>
 </head>
 <body>
 	<!-- 메뉴바 3구분 -->
@@ -54,9 +67,8 @@ if (count == 0) {
             </div>
             <ul class="navbar_menu">
                 <li><a href="../4.스터디찾기/스터디목록.jsp">스터디찾기</a></li>
-                <li><a href="../5.스터디등록/스터디등록.jsp">스터디등록</a></li>
-                <li><a href="#">레벨테스트</a></li>
-                <li><a href="../7.내스터디/개인정보.jsp">내스터디</a></li>
+                <li><a href="../5.스터디등록/스터디등록.jsp">스터디등록</a></li>               
+                <li><a a href="../7.내스터디/개인정보.jsp" >내스터디</a></li>                  
                 <li><a href="#">후기작성</a></li>
             </ul>
                  <ul class="navbar_icons">
@@ -111,7 +123,7 @@ if (count == 0) {
 		%>
 	
 		<div class="img" text="<%=Article.getTitle()%>" style="background-image: url('../img/명언4.png');" onclick="location.href='../4.스터디찾기/스터디내용.jsp?studyCode=<%=Article.getStudyCode()%>';">
-		<span><%=Article.getTitle()%></span>
+		<p><%=Article.getTitle()%></p>
 				
 		</div>
 	

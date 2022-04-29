@@ -41,7 +41,8 @@ int StudyCode = Integer.parseInt(request.getParameter("s_STUDYCODE"));
                 <li><a href="#">후기작성</a></li>
             </ul>
             <ul class="navbar_icons">
-            <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
+                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
             </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
@@ -91,7 +92,7 @@ int StudyCode = Integer.parseInt(request.getParameter("s_STUDYCODE"));
             </div>
             <div class="button">
                 <input type="button" value="수정" onClick="location.href='../스터디정보/스터디수정.jsp?s_STUDYCODE=<%=StudyCode%>&pageNum=<%=pageNum%>'">
-                <input type="button" value="삭제" onClick="location.href='../'">
+                <input type="button" value="삭제" onClick="location.href='../스터디정보/스터디삭제proc.jsp?s_STUDYCODE=<%=StudyCode%>&pageNum=<%=pageNum%>'">
                 <input type="button" value="뒤로" onClick="location.href='../스터디정보/정보메인.jsp'">
             </div>
         </form>

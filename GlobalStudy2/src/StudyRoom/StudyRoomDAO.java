@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+
 public class StudyRoomDAO {
 	// �떛湲��넠
 	private static StudyRoomDAO instance = null;
@@ -253,18 +255,7 @@ public class StudyRoomDAO {
 			/* pstmt.setDate(11, vo.getWriteDay()); */
 			pstmt.executeUpdate();
 			
-			sql="select max(S_STUDYCODE) from S_RESIST";
-			pstmt=con.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-			if(rs.next()) {
-				studycode= rs.getInt(1);
-		
-			sql="insert into S_JOIN(S_JOINCODE, S_STUDYCODE, M_MEMCODE, SJ_SUBMITYN)VALUES(S_JOIN_seq.nextval, ?, ?, 'Y')";
-			pstmt= con.prepareStatement(sql);
-			pstmt.setInt(1, studycode);
-			pstmt.setString(2, vo.getMemCode());
-			pstmt.executeUpdate();
-			}
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

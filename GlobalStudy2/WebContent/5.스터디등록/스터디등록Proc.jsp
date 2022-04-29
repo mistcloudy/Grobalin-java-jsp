@@ -5,18 +5,7 @@
     <%request.setCharacterEncoding("utf-8"); %>
     <jsp:useBean id="vo" class="StudyRoom.StudyRoomVO" scope="request"></jsp:useBean>
     <jsp:setProperty property="*" name="vo"/>
-    <%
-    String M_MemCode=(String)session.getAttribute("M_MemCode");
-    System.out.print("실행 여부 확인");
-    System.out.print(M_MemCode);
-    System.out.println();
-    if(M_MemCode==null){ 
-    %>
-    <script type="text/javascript">
-	alert("로그인을 먼저 해주시기 바랍니다.");
-	history.go(-1);/*history.back() 이전 페이지로 가기*/
-</script>
-    <%}else{ %>
+    
     <%
     if(vo.getTitle()==null||vo.getLanName()==null||vo.getLevel()==null||vo.getArea()==null||
     	vo.getWeek()==null||vo.getPartTime()==null||vo.getChatLink()==null||vo.getChatLink()==null){
@@ -83,10 +72,8 @@ history.go(-1);/*history.back() 이전 페이지로 가기*/
 	<%
 	StudyRoomDAO dao = StudyRoomDAO.getInstance();
 	dao.insertStudy(vo);
-/* 	response.sendRedirect("../4.스터디찾기/스터디목록.jsp");
- */    }
+    }
 	%>
-	<%} %>
 <html>
 <head>
 <meta charset="UTF-8" http-equiv="Refresh" content="0;url=../4.스터디찾기/스터디목록.jsp">

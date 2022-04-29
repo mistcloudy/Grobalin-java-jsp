@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" http-equiv="Refresh" content="0;url=../1.메인사이트/main.jsp">
+<meta charset="UTF-8" http-equiv="Refresh" content="0;url=../7.내스터디/개인정보.jsp">
 <title>Insert title here</title>
 </head>
 <body>

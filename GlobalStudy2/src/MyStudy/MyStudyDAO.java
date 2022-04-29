@@ -305,7 +305,7 @@ public class MyStudyDAO {
 			con = ConnUtil.getConnection();
 			//가장 최근에 입력한 글이 가장 처음으로 오게 내림차순 정렬하는 구문
 //			pstmt = con.prepareStatement("select * from board order by num desc");
-			pstmt = con.prepareStatement("select * from (select rownum rnum, j.S_JOINCODE, j.SJ_NAME, j.SJ_TITLE,  r.S_LANNAME, j.SJ_DATE, j.M_MEMCODE, j.SJ_SUBMITYN from S_RESIST r inner join S_JOIN j on r.S_STUDYCODE =j.S_STUDYCODE  and j.M_MEMCODE=? and j.SJ_SUBMITYN='N') where rnum >=? and rnum <=?");
+			pstmt = con.prepareStatement("select * from (select rownum rnum, j.S_JOINCODE, j.SJ_NAME, j.SJ_TITLE,  r.S_LANNAME, j.SJ_DATE, j.M_MEMCODE, j.SJ_SUBMITYN from S_RESIST r inner join S_JOIN j on r.S_STUDYCODE =j.S_STUDYCODE  and r.M_MEMCODE=? and j.SJ_SUBMITYN='N') where rnum >=? and rnum <=?");
 			pstmt.setString(1, code);
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, end);
@@ -540,23 +540,23 @@ public List<MyStudyVO> getArticles5(int start, int end, String code){
 	}//end getArticle
 	// 스터디 신청 정보 보기 
 	
-	public void insertArticle( MyStudyVO vo) {
+	public void insertArticle(MyStudyVO article) {
 		
 		Connection con = null;
 		PreparedStatement pstmt =null;
-		
+		MyStudyVO MyStudy = null;
 		String sql = "";
 		try {
 			con=ConnUtil.getConnection();
-		
+			article = new MyStudyVO();
 			sql="insert into S_JOIN (S_JOINCODE, S_STUDYCODE,  M_MEMCODE, SJ_NAME, SJ_DATE, SJ_TITLE, SJ_CONTENT, SJ_SUBMITYN)"
 					+ " values(S_JOIN_seq.NEXTVAL,?,?,?,sysdate,?,?,'N')";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, vo.getS_STUDYCODE());
-			pstmt.setString(2, vo.getM_MEMCODE());
-			pstmt.setString(3, vo.getSj_NAME());
-			pstmt.setString(4, vo.getSj_TITLE());
-			pstmt.setString(5, vo.getSj_CONTENT());
+			pstmt.setInt(1, article.getS_STUDYCODE());
+			pstmt.setString(2, article.getM_MEMCODE());
+			pstmt.setString(3, article.getSj_NAME());
+			pstmt.setString(4, article.getSj_TITLE());
+			pstmt.setString(5, article.getSj_CONTENT());
 			pstmt.executeUpdate();
 			
 			
@@ -614,7 +614,7 @@ public List<MyStudyVO> getArticles5(int start, int end, String code){
 	
 		try {
 			con=ConnUtil.getConnection();
-			pstmt= con.prepareStatement("delete from R_RESIST where S_STUDYCODE=?");
+			pstmt= con.prepareStatement("delete from S_RESIST where S_STUDYCODE=?");
 			pstmt.setInt(1, code);
 			pstmt.executeUpdate();
 		}catch(Exception e) {

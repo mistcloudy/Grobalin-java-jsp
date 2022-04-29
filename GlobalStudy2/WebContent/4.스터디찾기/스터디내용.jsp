@@ -32,7 +32,8 @@
                 <li><a href="#">후기작성</a></li>
             </ul>
             <ul class="navbar_icons">
-            <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
+                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
             </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
@@ -41,7 +42,7 @@
         </nav>
        <div class="soun">
     <div class="container">
-    <form action="../스터디정보/스터디수정.jsp">
+    <form action="../스터디신청/신청작성.jsp" method="get">
         <div class="title">스터디 상세내용 보기</div>
             <div class="user-details">
                 <div class="input-box">
@@ -86,7 +87,7 @@
             </div>
             <div class="button">
 			
-			<input type="submit" value="수정하기">
+			<input type="submit" value="신청하기">
 			<input type="button" value="목록보기" onclick="document.location.href='../4.스터디찾기/스터디목록.jsp'"> 
 
 			<!-- 수정페이지 분리 시 지울것 -->	
