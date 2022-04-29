@@ -55,21 +55,19 @@
         <link href="../css/목록.css" rel="stylesheet">
     </head>
     <body id="page-top">
-         <nav class="navbar">
+              <nav class="navbar">
             <div class="navbar_logo">
                 <i class="fa-solid fa-award"></i>   
-                <a href="../1.메인사이트/main.jsp">LOGO</a>
+                <a href="../1.메인사이트/main.jsp">Global Study</a>
             </div>
             <ul class="navbar_menu">
                 <li><a href="../4.스터디찾기/스터디목록.jsp">스터디찾기</a></li>
                 <li><a href="../5.스터디등록/스터디등록.jsp">스터디등록</a></li>
-                <li><a href="#">레벨테스트</a></li>
-                <li><a href="../7.내스터디/개인정보.jsp">내스터디</a></li>
+                <li><a href="../스터디정보/정보메인.jsp">내스터디</a></li>
                 <li><a href="#">후기작성</a></li>
             </ul>
-            <ul class="navbar_icons">
-                <li><a href="/2.로그인/Login.jsp"><ion-icon name="log-in-outline"></ion-icon></a></li>
-                <li><a href="/3.회원가입/회원가입.jsp"><i class="fa-solid fa-user"></i></a></li>
+            <ul class="navbar_icons">              
+                <li><a href="../2.로그인/로그인.jsp"><i class="fa-solid fa-user"></i></a></li>
             </ul>
     
             <a href="../4.스터디찾기/스터디목록.jsp" class="navbar_toogleBtn">
@@ -77,20 +75,20 @@
             </a>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="../7.내스터디/개인정보.jsp">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">언어스터디</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/연습용/img/네즈코.png" alt="..." /></span>
+                
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../7.내스터디/개인정보.jsp">개인정보</a></li>
+                <ul class="navbar-nav">           
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../스터디정보/정보메인.jsp">스터디정보</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../스터디신청/신청메인.jsp">스터디신청</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../스터디관리/관리메인.jsp">스터디관리</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../스터디후기/후기메인.jsp">후기작성</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav>    
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- About-->

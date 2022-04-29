@@ -36,7 +36,7 @@ String M_Name=(String)session.getAttribute("M_Name");
             <div class="user-details">
               <div class="input-box">
                     <span class="details">신청자</span>
-                    <input type="text" name="name" value="<%=M_Name %>">
+                    <input type="text" name="name" value="<%=M_Name %>"  readonly>
                 </div>
             <div class="input-box">
                 <span class="details">신청 제목</span>

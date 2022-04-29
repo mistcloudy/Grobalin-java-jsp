@@ -46,17 +46,7 @@ if (count == 0) {
 }
 %>
 
-<script >
-function loginCk() {
-	String loginID=(String)session.getAttribute("loginID");
-	if (loginID == null) {
-		alert("로그인을 해야합니다.");
-		window.history.back();
-	} else {
-		location.href="../7.내스터디/개인정보.jsp"
-	}
-}
-</script>
+
 </head>
 <body>
 	<!-- 메뉴바 3구분 -->
@@ -68,7 +58,7 @@ function loginCk() {
             <ul class="navbar_menu">
                 <li><a href="../4.스터디찾기/스터디목록.jsp">스터디찾기</a></li>
                 <li><a href="../5.스터디등록/스터디등록.jsp">스터디등록</a></li>               
-                <li><a a href="../7.내스터디/개인정보.jsp" >내스터디</a></li>                  
+                <li><a a href="../스터디정보/정보메인.jsp" >내스터디</a></li>                  
                 <li><a href="#">후기작성</a></li>
             </ul>
                  <ul class="navbar_icons">
