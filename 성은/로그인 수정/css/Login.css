@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    body{
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #166cea;
+    background: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzAxMDRfMjQ1%2FMDAxNDgzNTMzNDk3MjAx.7DqVlUOc1_JizLzeg83vnZjDOT2ThKXHPiOzmv2zoMYg.O4VMsr91PFjLegKCbT3T_nvCAZbGZIAmPPmkUT_R_O0g.GIF.dhehs20%2FBandPhoto_2017_01_02_22_52_42.gif&type=sc960_832_gif) no-repeat center;
+    background-size: 100% 100%;
+    /* background-size: cover; */
+    }
+    body::before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-color: rgba(0, 0, 0, .7);
+    }
+    .login-form{
+        position: relative;
+        z-index: 2;
+    }
+    .login-form h1{
+        font-size: 32px;
+        color: #FFF;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .int-area{
+        width: 400px;
+        /* 부모요소도같이변경 */
+        position: relative;
+        margin-top: 20px;
+    }
+    .int-area:first-child{
+        margin-top: 0;
+    }
+    .int-area input{
+        width: 100%;
+        padding: 20px 10px 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #999;
+        font-size: 18px;
+        color: #fff;
+        /* 테두리 */
+        outline: none;
+    }
+    .int-area label{
+        /* 이건자식요소 */
+        position: absolute;
+        left: 10px;
+        top: 17px;
+        font-size: 18px;
+        color: #999;
+        /* 라벨액션 */
+        transition: top .5s ease;
+    }
+
+    .int-area label.warning{
+        color: red !important;
+        animation: warning .3s ease;
+        animation-iteration-count: 3;
+    }
+
+    @keyframes warning{
+        0%{transform: translateX(-8px);}
+        25%{transform: translateX(8px);}
+        50%{transform: translateX(-8px);}
+        75%{transform: translateX(8px);}
+    }
+
+
+    .int-area input:focus + label,
+    .int-area input:valid + label{
+        top: -2px;
+        font-size: 13px;
+        color: #166cea;
+    }
+	.btn-area{
+    height: 45px;
+    margin: 45px 0 20px 65px;
+}
+
+	.btn-area input{
+    height: 100%;
+    width: 40%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+
+	.btn-area input:hover{
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+  	
