@@ -1,0 +1,92 @@
+.body2{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+
+.container1{
+    width: 1500px;
+    min-height: 50px;
+    background: #fff;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 20px;
+
+}
+
+.container1 .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    /* background:  rgb(131, 189, 243); */
+    color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(74, 16, 96, 0.7); */
+    margin: 37px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.container1 .box .imgBox{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5%
+}
+
+.container1 .box .imgBox img{
+    max-width: 100%;
+    height: 300px;
+    transition: transform 5s;
+}
+.container1 .box:hover .imgBox img{
+    transform: scale(1.2);
+}
+
+.container1 .box .details{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    bottom: 10px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transform: scaleY(0);
+    transition: transform .6s;
+}
+
+.container1 .box:hover .details{
+    transform: scaleY(1);
+}
+
+.container1 .box .details .content{
+    position: relative;
+    top: 10px;
+    bottom: 10px;
+    transform: translateY(-5%);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+
+.container1 .box .details .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background:#999;
+    color: rgb(241, 13, 13);
+}
+
+.container1 .box .details .content p{
+    margin: 50px 10px 10px;
+    padding: 0;
+    font-size: 20px;
+    color: #ff0;
+}
+
+@media(max-width: 1500px){
+    .container1{
+        max-width: 70%;
+    }
+}

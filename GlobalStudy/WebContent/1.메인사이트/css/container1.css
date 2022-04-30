@@ -1,0 +1,83 @@
+/* .body2{
+    margin: 0;
+    padding: 0;
+    background: #262626;
+    font-family: sans-serif;
+} */
+
+.container1{
+    width: 1500px;
+    min-height: 50px;
+    background: #fff;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 20px;
+
+}
+
+.container1 .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background:  rgb(131, 189, 243);
+    margin: 37px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.container1 .box .imgBox{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%
+}
+
+.container1 .box .imgBox img{
+    max-width: 100%;
+    height: 300px;
+    transition: transform 2s;
+}
+.container1 .box:hover .imgBox img{
+    transform: scale(1.2);
+}
+
+.container1 .box .details{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    bottom: 10px;
+    height: 10px;
+    background: rgba(29, 6, 241, 0.8);
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+
+.container1 .box:hover .details{
+    transform: scaleY(1);
+}
+
+.container1 .box .details .content{
+    position: relative;
+    top: 10px;
+    bottom: 10px;
+    transform: translateY(-5%);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+
+.container1 .box .details .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: rgb(241, 13, 13);
+}
+
+.container1 .box .details .content p{
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 20px;
+    color: #ff0;
+}
