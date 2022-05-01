@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* body부분의 전체 색깔 혼합 */
+    padding: 10px;
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+
+.container{
+    /* 맥스치 고정 */
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: "";
+    /* 부모에서 상속을 준다 re + ab */
+    position: absolute;
+    height: 3px;
+    /* 위치값 */
+    left: 0;
+    bottom: -10px;
+    height: 3px;
+    width: 260px;
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+
+
+
+.container form .user-details{
+    /* 전부 한줄로 배치하는데 wrap를 이용하여 공간에맞게 배치 */
+    display: flex;
+    flex-wrap: wrap;
+    /* 아이템 사이의 균일한 공간을 맞춰줌 */
+    justify-content: space-between;
+    margin:  20px 0px 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100%/ 2 - 20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.details{
+    margin-top: 20px;
+}
+
+.user-details .input-box input{
+    height:  45px;
+    width: 100%;
+    /* input눌렀을때 선 없앰 */
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    /* 선 라운드 굵기 */
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:focus{
+    /* 줄선 */
+    border-color: #9b59b6;
+
+}
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight:500;
+}
+
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    /* 균등하게 위치 조정 */
+    justify-content: space-between;
+    margin: 14px 0;
+}
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    /* 원하고 떨어지는 위치 */
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* 해당된 경로에 있는 것을 클릭시 서로 호환되면서 같은 묶음끼리 클릭이된다 */
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+
+form input[type=radio]{
+    /* radio를 안보이게해준다 */
+    display: none;
+}
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input{
+    height: 100%;
+    width: 40%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+
+form .button input:hover{
+    background: linear-gradient(134deg, #71b7e6, #9b59b6);
+}
+
+textarea{
+    /* display: block; */
+    display: flex;;
+    margin-top: 20px;
+    width: 650px;
+    height: 150px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid red;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+
+@media(max-width: 700px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .gender-details {
+        width: 700px;
+    }
+    .button{
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        /* 스크롤 */
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        /* 스크롤바 안보이게하기 */
+        width: 0;
+    }
+}

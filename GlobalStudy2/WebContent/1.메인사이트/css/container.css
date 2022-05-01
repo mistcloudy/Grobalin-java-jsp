@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  background-color:  rgb(243, 243, 243);
+}
+
+.img{
+  height: 50vh;
+  border-radius: 20px;
+  margin: 20px;
+  cursor: pointer;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  filter: blur(1px);
+  transition: all 0.2s linear;
+}
+
+.img:hover{
+    transform: scale(1.1);
+}

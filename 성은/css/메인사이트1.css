@@ -20,8 +20,18 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  filter: blur(1px);
+  /* filter: blur(1px); */
   transition: all 0.2s linear;
+}
+
+.img p{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 24px;
+  padding: 20px;
+  border: 1px solid #444;
+  /* border-radius: 10px; */
 }
 
 

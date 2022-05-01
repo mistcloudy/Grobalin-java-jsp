@@ -5,22 +5,23 @@
     font-family: 'Poppins' sans-serif;
 }
 
-body{
+/* body{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    /* body부분의 전체 색깔 혼합 */
     padding: 10px;
     background: linear-gradient(134deg, #71b7e6, #9b59b6);
-}
+} */
 
 .container{
     /* 맥스치 고정 */
+    margin-top: 20px;
     max-width: 1000px;
     max-height: 100%;
     width: 100%;
     /* height: 100%; */
+    border: 1px solid black;
     background: #fff;
     padding: 25px 30px;
     border-radius: 10px;
