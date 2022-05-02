@@ -1,0 +1,113 @@
+:root{
+    --text-color:#f0f4f5;
+    --background-color:#263343;
+    --accent-color:#224;
+    
+}
+
+body{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: rgb(234, 236, 238);
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.navbar{
+    /* 한줄로 늘어선다 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px;
+}
+
+.navbar_logo{
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.navbar_logo i{
+    color: aqua;
+}
+
+.navbar_menu{
+    display: none;
+    /* 한줄로배열 */
+    display: flex;
+    /* 점없앰 */
+    list-style: none;
+    padding-left: 0;
+}
+.navbar_menu li{
+    /* 메뉴간격 */
+    padding: 8px 15px;
+}
+
+.navbar_menu li:hover{
+    background-color: rgb(16, 16, 48);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar_icons{
+    display: none;
+    list-style: none;
+    color: antiquewhite;
+    display: flex;
+    /* 패딩남은거 조정 */
+    padding-left: 0;
+}
+
+.navbar_icons li{
+    padding: 8px 12px;
+}
+
+.navbar_toogleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: aqua;
+}
+/* --반응형을 할때 무조건 사용 */
+@media screen and (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu{
+        /* 아래로정렬 */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_icons{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_toogleBtn{
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active{
+        display: flex;
+    }
+}
+
+
+
+
+
