@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+table{
+    /* 모든테이블에 적용 */
+    border-collapse: collapse;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+thead{
+    background-color: rgb(227, 231, 233);
+    color: rgb(0, 0, 0);
+}
+caption{
+    display: none;
+}
+
+.board_list_wrap{
+    padding: 50px;
+}
+
+.board_list{
+    width: 100%;
+    /* 위에 실선 */
+    border-top: 1px solid rgb(30, 188, 146);
+}
+
+.board_list tr{
+    /* 한줄만 보이게 */
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list th,
+.board_list td{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.board_list td{
+    text-align: center;
+}
+
+/* 2번째영영만 */
+.board_list tbody tr td:nth-child(2){
+    text-align: left;
+}
+
+.board_list .tit:hover{
+    /* 마우스올릴때 태그표시 */
+    text-decoration: underline;
+    color: red;
+}
+
+.board_list_wrap .paging{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+.board_list_wrap .paging a{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 27px;
+    font-size: 12px;
+    border:  1px solid blue;
+}
+
+.board_list_wrap .paging a:first-child{
+    margin-left: 0;
+}
+
+.board_list_wrap .paging a.bt{
+    border: 1px solod #eee;
+    background: #eee;
+}
+
+.board_list_wrap .paging a.num{
+    border: 1px solid #000;
+    font-weight: 600;
+}
+
+.board_list_wrap .paging a.num:hover{
+    background-color: aqua;  
+}

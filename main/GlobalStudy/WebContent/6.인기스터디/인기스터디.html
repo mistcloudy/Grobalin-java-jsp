@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인기스터디</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/검색등록.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <i class="fa-solid fa-award"></i>   
+            <a href="/1.메인사이트/main.html">LOGO</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="/4.스터디찾기/index.html">스터디찾기</a></li>
+            <li><a href="/5.스터디등록/idex.html">스터디등록</a></li>
+            <li><a href="#">레벨테스트</a></li>
+            <li><a href="/7.내스터디/개인정보.html">내스터디</a></li>
+            <li><a href="#">후기작성</a></li>
+        </ul>
+        <ul class="navbar_icons">
+            <li><a href="/2.로그인/Login.html"><ion-icon name="log-in-outline"></ion-icon></a></li>
+            <li><a href="/3.회원가입/회원가입.html"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+
+        <a href="#" class="navbar_toogleBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <div class="soun">
+    <div class="container">
+        <div class="title">인기 스터디 정보</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">스터디장</span>
+                    <input type="text" name="name" readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">주요 스터디</span>
+                    <input type="text" name="title" readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">지역</span>
+                    <input type="text" name="area" readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">언어</span>
+                    <input type="text" name="lanname" readonly>
+                </div>             
+            </div>
+            <span class="details">스터디 소개</span>
+            <div class="gender-details">
+                <textarea placeholder="내용 입력" name="content"></textarea>
+            </div>
+            <div class="button">
+                <input type="submit" value="신청" onClick="location.href='/css/신청서.css'">
+                <input type="submit" value="HOME" onClick="location.href='/1.메인사이트/main.html'">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="body3">
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social_icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+    <ul class="menu">
+        <li><a href="#">유주훈</a></li>
+        <li><a href="#">이준호</a></li>
+        <li><a href="#">위성은</a></li>
+        <li><a href="#">지윤근</a></li>
+        <li><a href="#">안성기</a></li>
+    </ul>
+    <p>ⓒ2022 일본4기IT연수 글로벌인 2021년10월~2022년05월</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</div>             
+</body>
+</html>
